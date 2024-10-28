@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://people.eecs.ku.edu/~c753b437/practice2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Font Control</title>
+    <link href="./lab6practice2_files/style.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            background-color: lightblue;
+            color: black;
+            font-family: "Monaco", "Courier New", monospace;
+        }
+        .h1 {
+            background-color: CadetBlue;
+            border: 2px solid powderblue;
+            padding: 20px;
+            width: 230px;
+            text-shadow: 2px 2px powderblue;
+            margin: auto;
+            font-size: 300%;
+            text-align: center;
+        }
+        #text-container {
+            border: 2px solid powderblue;
+            padding: 10px;
+            width: 300px;
+            margin: 20px auto;
+            background-color: CadetBlue;
+            text-align: center;
+        }
+        .input-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+            color: black;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: powderblue;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link a {
+            color: powderblue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1 class="h1">CSS Font Control</h1>
+<div id="text-container">
+    <p id="text">Text to change color</p>
+</div>
+<div class="input-container">
+    <label for="text-r">Text Red (0-255):</label>
+    <input type="number" id="text-r" min="0" max="255" value="0"><br>
+    <label for="text-g">Text Green (0-255):</label>
+    <input type="number" id="text-g" min="0" max="255" value="0"><br>
+    <label for="text-b">Text Blue (0-255):</label>
+    <input type="number" id="text-b" min="0" max="255" value="0"><br>
+    <label for="border-r">Border Red (0-255):</label>
+    <input type="number" id="border-r" min="0" max="255" value="0"><br>
+    <label for="border-g">Border Green (0-255):</label>
+    <input type="number" id="border-g" min="0" max="255" value="0"><br>
+    <label for="border-b">Border Blue (0-255):</label>
+    <input type="number" id="border-b" min="0" max="255" value="0"><br>
+    <label for="border-width">Border Size:</label>
+    <input type="number" id="border-width" min="1" value="2"><br>
+    <button onclick="applyStyles()">Apply Styles</button>
+</div>
+<script>
+    function applyStyles() {
+        const textR = document.getElementById('text-r').value;
+        const textG = document.getElementById('text-g').value;
+        const textB = document.getElementById('text-b').value;
+        const borderR = document.getElementById('border-r').value;
+        const borderG = document.getElementById('border-g').value;
+        const borderB = document.getElementById('border-b').value;
+        const borderWidth = document.getElementById('border-width').value;
+        const text = document.getElementById('text');
+        const textContainer = document.getElementById('text-container');
+        text.style.color = `rgb(${textR}, ${textG}, ${textB})`;
+        textContainer.style.borderColor = `rgb(${borderR}, ${borderG}, ${borderB})`;
+        textContainer.style.borderWidth = `${borderWidth}px`;
+    }
+</script>
+
+
+
+</body></html>

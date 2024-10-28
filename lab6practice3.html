@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://people.eecs.ku.edu/~c753b437/practice3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Verification</title>
+    <link href="./lab6practice3_files/style.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            background-color: lightblue;
+            color: black;
+            font-family: "Monaco", "Courier New", monospace;
+        }
+        .h1 {
+            background-color: CadetBlue;
+            border: 2px solid powderblue;
+            padding: 20px;
+            width: 300px;
+            text-shadow: 2px 2px powderblue;
+            margin: auto;
+            font-size: 300%;
+            text-align: center;
+        }
+        .input-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+            color: black;
+        }
+        input {
+            padding: 5px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: powderblue;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .link a {
+            color: powderblue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1 class="h1">Password Verification</h1>
+<div class="input-container">
+    <label for="password1">Enter Password:</label>
+    <input type="password" id="password1" required=""><br>
+    <label for="password2">Confirm Password:</label>
+    <input type="password" id="password2" required=""><br>
+    <button onclick="verifyPassword()">Verify Password</button>
+</div>
+
+<script>
+    function verifyPassword() {
+        const password1 = document.getElementById('password1').value;
+        const password2 = document.getElementById('password2').value;
+        if (password1.length < 8) {
+            alert("Password must be at least 8 characters long.");
+        } else if (password1 !== password2) {
+            alert("Passwords do not match.");
+        } else {
+            alert("passwords match!");
+        }
+    }
+</script>
+
+
+
+</body></html>
